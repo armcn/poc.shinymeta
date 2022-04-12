@@ -1,0 +1,20 @@
+---
+title: "PoC shinymeta"
+author: "Andrew McNeil"
+output: 
+  html_document:
+    code_folding: "hide"
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  out.width = "100%", 
+  tidy = TRUE
+)
+```
+
+## Filtered Table
+
+```{r}
+{{table_1}}
+```

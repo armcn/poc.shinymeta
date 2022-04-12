@@ -1,0 +1,8 @@
+default:
+  golem_name: poc.shinymeta
+  golem_version: 0.0.0.9000
+  app_prod: no
+production:
+  app_prod: yes
+dev:
+  golem_wd: /Users/mcneil/dev/R/poc.shinymeta

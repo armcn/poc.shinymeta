@@ -1,0 +1,17 @@
+.radio-inline {
+  padding-right: 20px;
+  font-size: 18px;
+  color: #343a40;
+}
+
+input[type="radio"] {
+  width: 18px;
+  height: 18px;
+}
+
+.brand-link {
+  font-size: 24px;
+  color: #343a40;
+  text-align: center;
+  border: none !important;
+}
