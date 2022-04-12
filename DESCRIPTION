@@ -3,7 +3,7 @@ Title: PoC shinymeta
 Version: 0.0.0.9000
 Authors@R: person('Andrew', 'McNeil', email = 'andrew.mcneil@sanofi.com', role = c('cre', 'aut'))
 Description: A proof of concept for the shinymeta package.
-License: What license is it under?
+License: MIT + file LICENSE
 Imports: 
     bs4Dash,
     config (>= 0.3.1),
@@ -12,7 +12,15 @@ Imports:
     golem (>= 0.3.1),
     magrittr,
     shiny (>= 1.7.1),
-    shinymeta
+    shinymeta,
+    processx,
+    pkgload
 Encoding: UTF-8
 LazyData: true
 RoxygenNote: 7.1.1
+Suggests: 
+    shinytest,
+    spelling,
+    testthat (>= 3.0.0)
+Config/testthat/edition: 3
+Language: en-US

@@ -6,6 +6,14 @@
 \usage{
 select_cols(.mtcars, .cols)
 }
+\arguments{
+\item{.mtcars}{Filtered or unfiltered mtcars data}
+
+\item{.cols}{A character vector of column names to select}
+}
+\value{
+mtcars data containing a subset of columns
+}
 \description{
 Select mtcars columns
 }

@@ -20,25 +20,31 @@ mod_slider_mpg_server <- function(id, .mtcars) {
   moduleServer(id, function(input, output, session){
     ns <- session$ns
 
+    min_mpg <- reactive({
+      req(.mtcars())
+
+      min(.mtcars()$mpg)
+    })
+
+    max_mpg <- reactive({
+      req(.mtcars())
+
+      max(.mtcars()$mpg)
+    })
+
     output$slider <- renderUI({
+      req(min_mpg(), max_mpg())
+
       sliderInput(
         inputId = ns("mpg"),
         label = "Max MPG",
-        value = max(.mtcars()$mpg),
-        min = min(.mtcars()$mpg),
-        max = max(.mtcars()$mpg),
+        value = max_mpg(),
+        min = min_mpg(),
+        max = max_mpg(),
         step = 1
       )
     })
 
-    mtcars_mpg <- metaReactive2({
-      req(.mtcars(), input$mpg)
-
-      metaExpr(
-        filter_max_mpg(..(.mtcars()), ..(input$mpg))
-      )
-    })
-
-    return(mtcars_mpg)
+    return(reactive(input$mpg))
   })
 }

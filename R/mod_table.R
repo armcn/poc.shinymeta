@@ -33,8 +33,6 @@ mod_table_ui <- function(id) {
 #' @noRd
 mod_table_server <- function(id, .mtcars) {
   moduleServer(id, function(input, output, session) {
-    ns <- session$ns
-
     output$table <- metaRender2(reactable::renderReactable, {
       req(.mtcars())
 

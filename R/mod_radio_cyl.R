@@ -23,16 +23,10 @@ mod_radio_cyl_ui <- function(id) {
 #' @noRd
 mod_radio_cyl_server <- function(id, .mtcars) {
   moduleServer(id, function(input, output, session) {
-    ns <- session$ns
-
-    mtcars_cyl <- metaReactive2({
-      req(input$cyl)
-
-      metaExpr(
-        filter_cyl(..(.mtcars()), ..(input$cyl))
+    return(
+      reactive(
+        as.double(input$cyl)
       )
-    })
-
-    return(mtcars_cyl)
+    )
   })
 }

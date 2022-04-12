@@ -6,6 +6,14 @@
 \usage{
 filter_max_mpg(.mtcars, .mpg)
 }
+\arguments{
+\item{.mtcars}{Filtered or unfiltered mtcars data}
+
+\item{.mpg}{A numeric value of miles per gallon}
+}
+\value{
+mtcars data filtered with miles per gallon less than '.mpg'
+}
 \description{
 Filter mtcars by max mpg
 }

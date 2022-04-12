@@ -6,6 +6,14 @@
 \usage{
 filter_cyl(.mtcars, .cyl)
 }
+\arguments{
+\item{.mtcars}{Filtered or unfiltered mtcars data}
+
+\item{.cyl}{A numeric cylinder value of 4, 6, or 8}
+}
+\value{
+mtcars data filtered by cylinder
+}
 \description{
 Filter mtcars by cylinder
 }

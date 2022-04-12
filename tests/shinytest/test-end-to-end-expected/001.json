@@ -1,0 +1,188 @@
+{
+  "input": {
+    "cols-cols": [
+      "mpg",
+      "cyl",
+      "disp",
+      "hp",
+      "drat"
+    ],
+    "cyl-cyl": "6",
+    "mpg-mpg": 21.4,
+    "table-table__reactable__page": 1,
+    "table-table__reactable__pages": 1,
+    "table-table__reactable__pageSize": 10,
+    "table-table__reactable__selected": null
+  },
+  "output": {
+    "mpg-slider": {
+      "html": "<div class=\"form-group shiny-input-container\">\n  <label class=\"control-label\" id=\"mpg-mpg-label\" for=\"mpg-mpg\">Max MPG<\/label>\n  <input class=\"js-range-slider\" id=\"mpg-mpg\" data-skin=\"shiny\" data-min=\"17.8\" data-max=\"21.4\" data-from=\"21.4\" data-step=\"1\" data-grid=\"true\" data-grid-num=\"3.6\" data-grid-snap=\"false\" data-prettify-separator=\",\" data-prettify-enabled=\"true\" data-keyboard=\"true\" data-data-type=\"number\"/>\n<\/div>",
+      "deps": [
+        {
+          "name": "ionrangeslider-javascript",
+          "version": "2.3.1",
+          "src": {
+            "href": "shared/ionrangeslider"
+          },
+          "meta": null,
+          "script": "js/ion.rangeSlider.min.js",
+          "stylesheet": null,
+          "head": null,
+          "attachment": null,
+          "package": null,
+          "all_files": true
+        },
+        {
+          "name": "strftime",
+          "version": "0.9.2",
+          "src": {
+            "href": "shared/strftime"
+          },
+          "meta": null,
+          "script": "strftime-min.js",
+          "stylesheet": null,
+          "head": null,
+          "attachment": null,
+          "package": null,
+          "all_files": true
+        },
+        {
+          "name": "ionrangeslider-css",
+          "version": "2.3.1",
+          "src": {
+            "href": "shared/ionrangeslider"
+          },
+          "meta": null,
+          "script": null,
+          "stylesheet": "css/ion.rangeSlider.css",
+          "head": null,
+          "attachment": null,
+          "package": null,
+          "all_files": true
+        }
+      ]
+    },
+    "table-code": "library(poc.shinymeta)\nmtcars <- mtcars\nfilter_mtcars_cyl <- filter_cyl(mtcars, 6)\nfilter_mtcars_mpg <- filter_max_mpg(filter_mtcars_cyl, 21.4)\nselect_mtcars_cols <- select_cols(filter_mtcars_mpg, c(\"mpg\", \"cyl\", \"disp\", \"hp\", \"drat\"))\nreactable::reactable(select_mtcars_cols)",
+    "table-table": {
+      "x": {
+        "tag": {
+          "name": "Reactable",
+          "attribs": {
+            "data": {
+              ".rownames": [
+                "Mazda RX4",
+                "Mazda RX4 Wag",
+                "Hornet 4 Drive",
+                "Valiant",
+                "Merc 280",
+                "Merc 280C",
+                "Ferrari Dino"
+              ],
+              "mpg": [
+                21,
+                21,
+                21.4,
+                18.1,
+                19.2,
+                17.8,
+                19.7
+              ],
+              "cyl": [
+                6,
+                6,
+                6,
+                6,
+                6,
+                6,
+                6
+              ],
+              "disp": [
+                160,
+                160,
+                258,
+                225,
+                167.6,
+                167.6,
+                145
+              ],
+              "hp": [
+                110,
+                110,
+                110,
+                105,
+                123,
+                123,
+                175
+              ],
+              "drat": [
+                3.9,
+                3.9,
+                3.08,
+                2.76,
+                3.92,
+                3.92,
+                3.62
+              ]
+            },
+            "columns": [
+              {
+                "accessor": ".rownames",
+                "name": "",
+                "type": "character",
+                "sortable": false,
+                "filterable": false
+              },
+              {
+                "accessor": "mpg",
+                "name": "mpg",
+                "type": "numeric"
+              },
+              {
+                "accessor": "cyl",
+                "name": "cyl",
+                "type": "numeric"
+              },
+              {
+                "accessor": "disp",
+                "name": "disp",
+                "type": "numeric"
+              },
+              {
+                "accessor": "hp",
+                "name": "hp",
+                "type": "numeric"
+              },
+              {
+                "accessor": "drat",
+                "name": "drat",
+                "type": "numeric"
+              }
+            ],
+            "defaultPageSize": 10,
+            "paginationType": "numbers",
+            "showPageInfo": true,
+            "minRows": 1,
+            "dataKey": "0d57cdfd04651ad5950c04c1fc5f23c9",
+            "key": "0d57cdfd04651ad5950c04c1fc5f23c9"
+          },
+          "children": [
+
+          ]
+        },
+        "class": "reactR_markup"
+      },
+      "evals": [
+
+      ],
+      "jsHooks": [
+
+      ],
+      "deps": [
+
+      ]
+    }
+  },
+  "export": {
+
+  }
+}
