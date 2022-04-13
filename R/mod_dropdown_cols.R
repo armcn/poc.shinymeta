@@ -22,7 +22,7 @@ mod_dropdown_cols_ui <- function(id) {
 #'
 #' @noRd
 mod_dropdown_cols_server <- function(id, .mtcars) {
-  moduleServer(id, function(input, output, session){
+  moduleServer(id, function(input, output, session) {
     ns <- session$ns
 
     mtcars_names <- reactive({

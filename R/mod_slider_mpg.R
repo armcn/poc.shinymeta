@@ -17,7 +17,7 @@ mod_slider_mpg_ui <- function(id) {
 #'
 #' @noRd
 mod_slider_mpg_server <- function(id, .mtcars) {
-  moduleServer(id, function(input, output, session){
+  moduleServer(id, function(input, output, session) {
     ns <- session$ns
 
     min_mpg <- reactive({

@@ -23,10 +23,6 @@ mod_radio_cyl_ui <- function(id) {
 #' @noRd
 mod_radio_cyl_server <- function(id, .mtcars) {
   moduleServer(id, function(input, output, session) {
-    return(
-      reactive(
-        as.double(input$cyl)
-      )
-    )
+    return(reactive(as.double(input$cyl)))
   })
 }
