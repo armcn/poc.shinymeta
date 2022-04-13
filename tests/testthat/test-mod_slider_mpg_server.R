@@ -27,3 +27,11 @@ testServer(
     max_mpg() %>% expect_identical(max_mpg_expected)
   }
 )
+
+test_that("dynamic slider input generates correct HTML", {
+  skip_on_covr()
+
+  app <- shinytest::ShinyDriver$new(run_app())
+  app$setInputs(`cyl-cyl` = "6")
+  app$getValue("mpg-slider") %>% expect_snapshot()
+})
