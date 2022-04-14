@@ -5,7 +5,7 @@
 #' @noRd
 app_server <- function(input, output, session) {
   mtcars_copy <-
-    metaReactive(datasets::mtcars, varname = "mtcars")
+    metaReactive(datasets::mtcars, varname = "mtcars_copy")
 
   cyl <-
     mod_radio_cyl_server("cyl")

@@ -42,8 +42,8 @@ mod_table_server <- function(id, .mtcars) {
     })
 
     output$code <- renderPrint({
-      expandChain(
-        quote(library(poc.shinymeta)),
+      shinymeta::expandChain(
+        files_to_shinymeta_expr("^R/fct_"),
         output$table()
       )
     })
@@ -51,15 +51,17 @@ mod_table_server <- function(id, .mtcars) {
     output$download <- downloadHandler(
       filename = "script.zip",
       content = function(file) {
-        table_1_code <- expandChain(
-          quote(library(poc.shinymeta)),
-          output$table()
-        )
+        functions <-
+          files_to_shinymeta_expr("^R/fct_")
+
+        table_1_code <-
+          shinymeta::expandChain(output$table())
 
         shinymeta::buildRmdBundle(
           app_sys("app/rmd/script.Rmd"),
           file,
           vars = list(
+            functions = functions,
             table_1 = table_1_code
           )
         )

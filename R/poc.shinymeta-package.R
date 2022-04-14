@@ -2,7 +2,6 @@
 "_PACKAGE"
 
 #' @import shiny
-#' @importFrom shinymeta expandChain
 #' @importFrom shinymeta metaExpr
 #' @importFrom shinymeta metaReactive
 #' @importFrom shinymeta metaReactive2
